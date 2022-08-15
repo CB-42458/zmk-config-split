@@ -1,0 +1,6 @@
+if SHIELD_LEFT_SIDE
+
+config ZMK_KEYBOARD_NAME
+    default "Redox Mod Left"
+
+endif

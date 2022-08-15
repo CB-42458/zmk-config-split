@@ -1,0 +1,45 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/ {
+	sensors {
+		compatible = "zmk,keymap-sensors";
+		sensors = <&left_encoder>;
+	};
+
+    behaviors {
+        m_td_ht: media_tap_dance_hold_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MEDIA_TAP_DANCE_HOLD_TAP";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&mt C_MUTE C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap"; 
+
+        default_layer {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    
+//==================================================================================
+// |   ESC   |    1    |    2    |    3    |    4    |    5    |         | mute
+// |   DEL   |    Q    |    W    |    E    |    R    |    T    |   =/+   |
+// |   TAB   |    A    |    S    |    D    |    F    |    G    |   [{    |
+// |   LA1   |    Z    |    X    |    C    |    V    |    B    |====================
+// |  CTRL   |   GUI   |   ALT   |  empty  |  SPACE  |         |  empty  |  ENTER  |
+//                                                             |  SHIFT  |   LA1   |
+            bindings = <
+&kp ESC       &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                &m_td_ht
+&kp DEL       &kp Q      &kp W      &kp E      &kp R      &kp T      &kp EQUAL
+&kp TAB       &kp A      &kp S      &kp D      &kp F      &kp G      &kp LBKT
+&out OUT_TOG  &kp Z      &kp X      &kp C      &kp V      &kp B
+&kp LCTRL     &kp LGUI   &kp LALT   &none      &kp SPACE             &reset      &kp RET
+                                                                     &kp LSHIFT  &bt BT_CLR
+                       >;
+        };
+    };
+};  
