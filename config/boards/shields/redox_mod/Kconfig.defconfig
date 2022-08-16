@@ -1,0 +1,25 @@
+if SHIELD_LEFT_SIDE
+
+config ZMK_KEYBOARD_NAME
+    default "Redox Mod"
+
+endif
+
+
+if SHIELD_BOARD_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Redox Mod"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+
+if SHIELD_BOARD_LEFT || SHIELD_BOARD_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

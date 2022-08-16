@@ -1,8 +1,0 @@
-file_format: "1"
-id: left_side
-name: left_side
-type: shield
-requires: [nice_nano_v2]
-features:
-  - keys
-  - encoder
