@@ -10,6 +10,15 @@
         , <&pro_micro 7 GPIO_ACTIVE_HIGH> //COL_5  D7
         , <&pro_micro 8 GPIO_ACTIVE_HIGH> //COL_6  D8
         ;
+    
+    row-gpios
+        = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //ROW_0 D10
+        , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //ROW_1 D16
+        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //ROW_2 D14
+        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //ROW_3 D15
+        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //ROW_4 D18
+        , <&pro_micro 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //ROW_5 D1
+        ;
 };
 
 &left_encoder {
