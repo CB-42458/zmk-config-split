@@ -1,4 +1,4 @@
-#include "sofle.dtsi"
+#include "redox_mod.dtsi"
 
 &default_transform {
 	col-offset = <7>;
