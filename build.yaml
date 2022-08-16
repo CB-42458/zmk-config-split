@@ -12,8 +12,5 @@
 #     shield: reviung41
 #
 ---
-include:
-  - board: nice_nano_v2
-    shield: redox_mod_left
-  - board: nice_nano_v2
-    shield: redox_mod_right
+board: [ "nice_nano_v2"]
+shield: [ "redox_mod_left", "redox_mod_right" ]
