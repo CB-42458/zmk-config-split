@@ -59,11 +59,11 @@
 // | CRTL  |  ALT  |  GUI  | MO 3 |  GUI  |      | PG_UP | PG_DOWN | --- | HOME  |  END  |     | DEl  | LEFT | DOWN | UP |   RIGHT   |
 //                                               | SPACE |   MO 1  | --- |  NAN  | SPACE |
             bindings = <
-&none  &trans     &trans     &trans  &trans  &trans              &trans    &trans        &none &kp N7 &kp N8  &kp N9    &kp FSLH  &kp trans
+&none  &trans     &trans     &trans  &trans  &trans              &trans    &trans        &none &kp N7 &kp N8  &kp N9    &kp FSLH  &trans
 &trans &kp F1     &kp F2     &kp F3  &kp F4  &kp F5      &kp F6                   &trans &none &kp N4 &kp N5  &kp N6    &kp STAR  &kp BSLH
 &trans &kp F7     &kp F8     &kp F9  &kp F10 &kp F11     &kp F12                  &trans &none &kp N1 &kp N2  &kp N3    &kp PLUS  &none
 &trans &bt BT_NXT &bt BT_CLR &none   &reset  &bootloader                                 &none &kp N0 &kp DOT &kp EQUAL &kp MINUS &trans
-&trans &trans     &trans     &trans  &trans              &trans  &trans    &trans &trans       &none  &none   &none     &none     &none
+&trans &trans     &trans     &trans  &trans              &trans  &trans    &trans &trans       &trans &trans  &trans    &trans    &trans
                                                          &trans  &trans    &trans &trans
             >;
         };
