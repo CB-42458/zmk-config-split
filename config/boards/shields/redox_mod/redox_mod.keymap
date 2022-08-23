@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+
 / {
     behaviors {
         m_td_ht: media_tap_dance_hold_tap {
@@ -31,25 +32,41 @@
         default_layer {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 
-// |   `   |  1  |  2  |  3   |  4  |  5  |       |  MEDIA  | --- | MEIDA |       |  6  |  7   |  8    |  9   | 0  |    BKSP   |
-// | ESC   |  Q  |  W  |  E   |  R  |  T  |  ( )  |           ---         |  [ ]  |  Y  |  U   |  I    |  O   | P  |     #     |
-// | TAB   |  A  |  S  |  D   |  F  |  G  |   -   |           ---         |   =   |  H  |  J   |  K    |  L   | ;  |     '     |
-// | SHIFT |  Z  |  X  |  C   |  V  |  B  |                                       |  N  |  M   |  ,    |  .   | /  | SHFT(RET) |
-// | CRTL  | ALT | GUI | MO 3 | GUI |     | PG_UP | PG_DOWN | --- | HOME  |  END  |     | MO 2 | LEFT  | DOWN | UP |   RIGHT   |
-//                                        | SPACE |   MO 1  | --- |  DEL  | SPACE |
+// |   `   |  1  |  2  |  3   |  4  |  5  |       |  MEDIA  | --- | MEIDA |       |  6  |  7   |  8   |  9   | 0  |    BKSP   |
+// | ESC   |  Q  |  W  |  E   |  R  |  T  |  ( )  |           ---         |  [ ]  |  Y  |  U   |  I   |  O   | P  |     \     |
+// | TAB   |  A  |  S  |  D   |  F  |  G  |   -   |           ---         |   =   |  H  |  J   |  K   |  L   | ;  |     '     |
+// | SHIFT |  Z  |  X  |  C   |  V  |  B  |                                       |  N  |  M   |  ,   |  .   | /  | SHFT(RET) |
+// | CRTL  | ALT | GUI | MO 3 | GUI |     | PG_UP | PG_DOWN | --- | HOME  |  END  |     | DEL  | LEFT | DOWN | UP |   RIGHT   |
+//                                        | SPACE |   MO 1  | --- |  nan  | SHIFT |
 
             bindings = <
-&kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5             &m_td_ht    &m_td_ht           &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp BSPC
-&kp ESC    &kp Q    &kp W    &kp E    &kp R    &kp T  &td_par                          &td_brc   &kp Y  &kp U  &kp I     &kp O    &kp P    &kp HASH
-&kp TAB    &kp A    &kp S    &kp D    &kp F    &kp G  &kp MINUS                        &kp EQUAL &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHIFT &kp Z    &kp X    &kp C    &kp V    &kp B                                             &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &mt RSHIFT RET
-&kp LCTRL  &kp LALT &kp LGUI &none    &kp LGUI        &kp PG_UP &kp PG_DN     &kp HOME &kp END          &none  &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
-                                                      &kp SPACE &none         &kp DEL  &kp SPACE
-
+&kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5             &m_td_ht    &m_td_ht           &kp N6 &kp N7  &kp N8    &kp N9   &kp N0   &kp BSPC
+&kp ESC    &kp Q    &kp W    &kp E    &kp R    &kp T  &td_par                          &td_brc   &kp Y  &kp U   &kp I     &kp O    &kp P    &kp BSLH
+&kp TAB    &kp A    &kp S    &kp D    &kp F    &kp G  &kp MINUS                        &kp EQUAL &kp H  &kp J   &kp K     &kp L    &kp SEMI &kp SQT
+&kp LSHIFT &kp Z    &kp X    &kp C    &kp V    &kp B                                             &kp N  &kp M   &kp COMMA &kp DOT  &kp FSLH &mt RSHIFT RET
+&kp LCTRL  &kp LALT &kp LGUI &none    &kp LGUI        &kp PG_UP &kp PG_DN     &kp HOME &kp END          &kp DEL &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
+                                                      &kp SPACE &mo 1         &none    &kp RSHIFT
             >;
-
         };
-    
-    };
 
+
+        raised_layer {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+
+// | NAN   |  1    |   2   |  3   |   4   |  5   |       |  MEDIA  | --- | MEIDA |       | NAN |  7   |  8   |  9   | /  |    BKSP   |
+// | ESC   |  F1   |  F2   | F3   |  F4   |  F5  |  F6   |           ---         |  [ ]  | NAN |  4   |  5   |  6   | *  |     \     |
+// | TAB   |  F7   |  F8   | F9   |  F10  | F11  |  F12  |           ---         |   =   | NAN |  1   |  2   |  3   | +  |    NAN    |
+// | SHIFT | BTCYL | BTCLR | NAN  | reset | bldr |                                       | NAN |  0   |  .   |  =   | -  | SHFT(RET) |
+// | CRTL  |  ALT  |  GUI  | MO 3 |  GUI  |      | PG_UP | PG_DOWN | --- | HOME  |  END  |     | DEl  | LEFT | DOWN | UP |   RIGHT   |
+//                                               | SPACE |   MO 1  | --- |  NAN  | SPACE |
+            bindings = <
+&kp none   &trans     &trans     &trans  &trans  &trans              &trans    &trans        &none &kp N7 &kp N8  &kp N9    &kp FSLH  &kp trans
+&trans     &kp F1     &kp F2     &kp F3  &kp F4  &kp F5      &kp F6                   &trans &none &kp N4 &kp N5  &kp N6    &kp STAR  &kp BSLH
+&trans     &kp F7     &kp F8     &kp F9  &kp F10 &kp F11     &kp F12                  &trans &none &kp N1 &kp N2  &kp N3    &kp PLUS  &none
+&trans     &bt BT_NXT &bt BT_CLR &none   &reset  &bootloader                                 &none &kp N0 &kp DOT &kp EQUAL &kp MINUS &trans
+&trans     &trans     &trans   &trans   &trans               &trans  &trans    &trans &trans       &none  &none   &none     &none     &none
+                                                             &trans  &trans    &trans &trans
+            >;
+        };
+    };
 };
