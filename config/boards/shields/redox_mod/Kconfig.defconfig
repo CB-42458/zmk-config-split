@@ -6,7 +6,7 @@ config ZMK_KEYBOARD_NAME
 endif
 
 
-if SHIELD_BOARD_LEFT
+if REDOX_MOD_LEFT
 
 config ZMK_KEYBOARD_NAME
     default "Redox Mod"
@@ -17,7 +17,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 endif
 
 
-if SHIELD_BOARD_LEFT || SHIELD_BOARD_RIGHT
+if REDOX_MOD_LEFT || REDOX_MOD_RIGHT
 
 config ZMK_SPLIT
     default y

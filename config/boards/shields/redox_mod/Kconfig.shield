@@ -1,5 +1,5 @@
-config SHIELD_BOARD_LEFT
-    def_bool $(shields_list_contains,shield_board_left)
+config REDOX_MOD_LEFT
+    def_bool $(shields_list_contains,redox_mod_left)
 
-config SHIELD_BOARD_RIGHT
-    def_bool $(shields_list_contains,shield_board_right)
+config REDOX_MOD_RIGHT
+    def_bool $(shields_list_contains,redox_mod_right)
