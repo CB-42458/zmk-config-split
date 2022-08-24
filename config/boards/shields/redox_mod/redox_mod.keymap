@@ -31,20 +31,20 @@
         default_layer {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 
-// |   `   |  1  |  2  |  3   |  4  |  5  |       |  MEDIA  | --- | MEIDA |       |  6  |  7   |  8   |  9   | 0  |    BKSP   |
-// | ESC   |  Q  |  W  |  E   |  R  |  T  |  ( )  |           ---         |  [ ]  |  Y  |  U   |  I   |  O   | P  |     \     |
-// | TAB   |  A  |  S  |  D   |  F  |  G  |   -   |           ---         |   =   |  H  |  J   |  K   |  L   | ;  |     '     |
-// | SHIFT |  Z  |  X  |  C   |  V  |  B  |                                       |  N  |  M   |  ,   |  .   | /  | SHFT(RET) |
-// | CRTL  | ALT | GUI | MO 3 | GUI |     | PG_UP | PG_DOWN | --- | HOME  |  END  |     | DEL  | LEFT | DOWN | UP |   RIGHT   |
-//                                        | SPACE |   MO 1  | --- |  nan  | SHIFT |
+// |   `   |  1  |  2  |  3   |   4   |  5  |       |  MEDIA  | --- | MEIDA  |       |  6  |   7   |  8   |  9   | 0  |    BKSP   |
+// | ESC   |  Q  |  W  |  E   |   R   |  T  |  ( )  |           ---          |  [ ]  |  Y  |   U   |  I   |  O   | P  |     \     |
+// | TAB   |  A  |  S  |  D   |   F   |  G  |   -   |           ---          |   =   |  H  |   J   |  K   |  L   | ;  |     '     |
+// | SHIFT |  Z  |  X  |  C   |   V   |  B  |                                        |  N  |   M   |  ,   |  .   | /  | SHFT(RET) |
+// | CRTL  | ALT | GUI | MO 2 | SHIFT |     | PG_UP | PG_DOWN | --- |  HOME  |  END  |     | SPACE | LEFT | DOWN | UP |   RIGHT   |
+//                                          |  DEL  |   MO 1  | --- |  MO 2  |  MO 1 |
 
             bindings = <
-&kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5             &m_td_ht    &m_td_ht           &kp N6 &kp N7  &kp N8    &kp N9   &kp N0   &kp BSPC
-&kp ESC    &kp Q    &kp W    &kp E    &kp R    &kp T  &td_par                          &td_brc   &kp Y  &kp U   &kp I     &kp O    &kp P    &kp BSLH
-&kp TAB    &kp A    &kp S    &kp D    &kp F    &kp G  &kp MINUS                        &kp EQUAL &kp H  &kp J   &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHIFT &kp Z    &kp X    &kp C    &kp V    &kp B                                             &kp N  &kp M   &kp COMMA &kp DOT  &kp FSLH &mt RSHIFT RET
-&kp LCTRL  &kp LALT &kp LGUI &none    &kp LGUI        &kp PG_UP &kp PG_DN     &kp HOME &kp END          &kp DEL &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
-                                                      &kp SPACE &mo 1         &none    &kp RSHIFT
+&kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5             &m_td_ht    &m_td_ht           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp BSPC
+&kp ESC    &kp Q    &kp W    &kp E    &kp R    &kp T  &td_par                          &td_brc   &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSLH
+&kp TAB    &kp A    &kp S    &kp D    &kp F    &kp G  &kp MINUS                        &kp EQUAL &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+&kp LSHIFT &kp Z    &kp X    &kp C    &kp V    &kp B                                             &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &mt RSHIFT RET
+&kp LCTRL  &kp LALT &kp LGUI &none    &kp LGUI        &kp PG_UP &kp PG_DN     &kp HOME &kp END          &kp SPACE &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
+                                                      &kp SPACE &mo 1         &none    &mo 1
             >;
         };
 
