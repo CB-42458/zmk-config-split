@@ -52,19 +52,19 @@
         raised_layer {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 
-// | NAN   |  1    |   2   |  3   |   4   |  5   |       |  MEDIA  | --- | MEIDA |       | reset |  7   |  8   |  9   | /  |    BKSP   |
-// | ESC   |  F1   |  F2   | F3   |  F4   |  F5  |  F6   |           ---         |  [ ]  | bldr  |  4   |  5   |  6   | *  |     \     |
-// | TAB   |  F7   |  F8   | F9   |  F10  | F11  |  F12  |           ---         |   =   |  NAN  |  1   |  2   |  3   | +  |    NAN    |
-// | SHIFT | BTCYL | BTCLR | NAN  | reset | bldr |                                       |  NAN  |  0   |  .   |  =   | -  | SHFT(RET) |
-// | CRTL  |  ALT  |  GUI  | MO 3 |  GUI  |      | PG_UP | PG_DOWN | --- | HOME  |  END  |       | DEl  | LEFT | DOWN | UP |   RIGHT   |
+// | NAN   |  1   |   2  |   3    |   4   |  5   |       |  MEDIA  | --- | MEIDA |       | reset |  7   |  8   |  9   | /  |    BKSP   |
+// | ESC   |  F1  |  F2  |   F3   |  F4   |  F5  |  F6   |           ---         |  [ ]  | bldr  |  4   |  5   |  6   | *  |     \     |
+// | TAB   |  F7  |  F8  |   F9   |  F10  | F11  |  F12  |           ---         |   =   |  NAN  |  1   |  2   |  3   | +  |    NAN    |
+// | SHIFT | BT 1 | BT 2 | BTCLR  | reset | bldr |                                       |  NAN  |  0   |  .   |  =   | -  | SHFT(RET) |
+// | CRTL  | ALT  | GUI  |  MO 3  |  GUI  |      | PG_UP | PG_DOWN | --- | HOME  |  END  |       | DEl  | LEFT | DOWN | UP |   RIGHT   |
 //                                               | SPACE |   MO 1  | --- |  NAN  | SPACE |
             bindings = <
-&none  &trans     &trans     &trans  &trans  &trans              &trans    &trans        &reset      &kp N7 &kp N8  &kp N9    &kp FSLH  &trans
-&trans &kp F1     &kp F2     &kp F3  &kp F4  &kp F5      &kp F6                   &trans &bootloader &kp N4 &kp N5  &kp N6    &kp STAR  &kp BSLH
-&trans &kp F7     &kp F8     &kp F9  &kp F10 &kp F11     &kp F12                  &trans &none       &kp N1 &kp N2  &kp N3    &kp PLUS  &none
-&trans &bt BT_NXT &bt BT_CLR &none   &reset  &bootloader                                 &none       &kp N0 &kp DOT &kp EQUAL &kp MINUS &trans
-&trans &trans     &trans     &trans  &trans              &trans  &trans    &trans &trans             &trans &trans  &trans    &trans    &trans
-                                                         &trans  &trans    &trans &trans
+&none  &trans       &trans       &trans     &trans  &trans              &trans    &trans        &reset      &kp N7 &kp N8  &kp N9    &kp FSLH  &trans
+&trans &kp F1       &kp F2       &kp F3     &kp F4  &kp F5      &kp F6                   &trans &bootloader &kp N4 &kp N5  &kp N6    &kp STAR  &kp BSLH
+&trans &kp F7       &kp F8       &kp F9     &kp F10 &kp F11     &kp F12                  &trans &none       &kp N1 &kp N2  &kp N3    &kp PLUS  &none
+&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_CLR &reset  &bootloader                                 &none       &kp N0 &kp DOT &kp EQUAL &kp MINUS &trans
+&trans &trans       &trans       &trans     &trans              &trans  &trans    &trans &trans             &trans &trans  &trans    &trans    &trans
+                                                                &trans  &trans    &trans &trans
             >;
         };
     };
